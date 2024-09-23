@@ -14,7 +14,6 @@ return {
         end, { desc = "Rust Debuggables", buffer = bufnr })
       end,
       default_settings = {
-        -- rust-analyzer language server configuration
         ["rust-analyzer"] = {
           cargo = {
             allFeatures = true,
@@ -23,14 +22,11 @@ return {
               enable = true,
             },
           },
-          -- Add clippy lints for Rust.
           checkOnSave = false,
           procMacro = {
             enable = true,
             ignored = {
-              ["async-trait"] = { "async_trait" },
               ["napi-derive"] = { "napi" },
-              ["async-recursion"] = { "async_recursion" },
             },
           },
           inlayHintos = {
