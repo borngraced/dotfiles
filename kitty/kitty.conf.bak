@@ -3,9 +3,9 @@
 # https://sw.kovidgoyal.net/kitty/conf/
 
 # To get a full list of supported fonts use the `kitty +list-fonts` command.
-font_family     MonoLisa
+font_family     FiraCode Nerd Font
 #font_family      JetBrainsMono Nerd Font
-font_size 13.0
+font_size 15
 
 scrollback_lines 8000
 
@@ -18,7 +18,7 @@ select_by_word_characters @-./_~?&=%+#
 show_hyperlink_targets yes
 
 remote_kitty if-needed
-hide_window_decorations yes
+hide_window_decorations false
 
 # https://sw.kovidgoyal.net/kitty/kittens/ssh/#opt-kitten-ssh.share_connections
 share_connections yes
@@ -34,8 +34,8 @@ mouse_map ctrl+left press ungrabbed mouse_selection normal
 mouse_map right press ungrabbed copy_to_clipboard
 
 remember_window_size  yes
-initial_window_width  640
-initial_window_height 400
+initial_window_width  840
+initial_window_height 600
 
 #: If enabled, the window size will be remembered so that new
 #: instances of kitty will have the same size as the previous
@@ -274,7 +274,7 @@ map ctrl+a>shift+d     debug_config
 
 
 # BEGIN_KITTY_THEME
-# Hipster Green
+# Gruvbox Material Dark Soft
 include current-theme.conf
 # END_KITTY_THEME
 

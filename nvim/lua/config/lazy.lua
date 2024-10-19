@@ -30,9 +30,9 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "gruvbox" } },
+  install = {},
   checker = {
-    enabled = true, -- check for plugin updates periodically
+    enabled = false, -- check for plugin updates periodically
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
   performance = {
@@ -47,6 +47,7 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
+        "indent-blankline.nvim",
       },
     },
   },

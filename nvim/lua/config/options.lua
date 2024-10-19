@@ -3,3 +3,7 @@
 -- Add any additional options here
 --
 vim.o.wrap = true
+
+local opt = vim.opt
+opt.relativenumber = true
+vim.g.gitblame_date_format = "%r"

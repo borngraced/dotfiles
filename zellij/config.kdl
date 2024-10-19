@@ -47,7 +47,7 @@ keybinds {
         bind "l" "Right" { MovePane "Right"; }
     }
     tab {
-        bind "Ctrl t" { SwitchToMode "Normal"; }
+        bind "Alt t" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
@@ -69,7 +69,7 @@ keybinds {
         bind "Tab" { ToggleTab; }
     }
     scroll {
-        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Alt m" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
@@ -158,6 +158,13 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+
+        bind "Alt f" {
+        LaunchPlugin "filepicker" {
+            floating true // uncomment this to have the filepicker opened in a floating window
+            close_on_selection true // comment this out to have the filepicker remain open even after selecting a file
+        };
+    }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -228,7 +235,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames true
+    pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -259,6 +266,7 @@ auto_layout true
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
+
 themes {
     gruvbox-light {
         fg 124 111 100
@@ -286,16 +294,38 @@ themes {
         white 251 241 199
         orange 214 93 14
     }
+    melange {
+        fg 236 225 215
+        bg 41 37 34
+        black 52 48 44
+        red 189 129 131
+        green 120 153 122
+        yellow 228 155 93
+        blue 127 145 178
+        magenta 179 128 176
+        cyan 123 150 149
+        white 193 167 142
+        bright_black 134 116 98
+        bright_red 212 119 102
+        bright_green 133 182 149
+        bright_yellow 235 192 109
+        bright_blue 163 169 206
+        bright_magenta 207 155 194
+        bright_cyan 137 179 182
+        bright_white 236 225 215
+        orange 228 155 93
+    }
 }
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox-dark"
+theme "melange"
+
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
- default_layout "terminal"
+ default_layout "alt"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -374,3 +404,10 @@ theme "gruvbox-dark"
 // Default: false
 //
 // disable_session_metadata true
+//
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}

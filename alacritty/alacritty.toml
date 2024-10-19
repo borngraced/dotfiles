@@ -1,26 +1,24 @@
-[colors.bright]
-black = "#928374"
-blue = "#83a598"
-cyan = "#8ec07c"
-green = "#b8bb26"
-magenta = "#d3869b"
-red = "#fb4934"
-white = "#ebdbb2"
-yellow = "#fabd2f"
-
-[colors.normal]
-black = "#282828"
-blue = "#458588"
-cyan = "#689d6a"
-green = "#98971a"
-magenta = "#b16286"
-red = "#cc241d"
-white = "#a89984"
-yellow = "#d79921"
-
 [colors.primary]
-background = "#1d2021"
-foreground = "#ebdbb2"
+foreground = "#ECE1D7"
+background = "#292522"
+[colors.normal]
+black      = "#34302C"
+red        = "#BD8183"
+green      = "#78997A"
+yellow     = "#E49B5D"
+blue       = "#7F91B2"
+magenta    = "#B380B0"
+cyan       = "#7B9695"
+white      = "#C1A78E"
+[colors.bright]
+black      = "#867462"
+red        = "#D47766"
+green      = "#85B695"
+yellow     = "#EBC06D"
+blue       = "#A3A9CE"
+magenta    = "#CF9BC2"
+cyan       = "#89B3B6"
+white      = "#ECE1D7"
 
 [env]
 TERM = "alacritty"
@@ -44,188 +42,13 @@ style = "Italic"
 family = "FiraCode Nerd Font"
 style = "Retina"
 
-[[keyboard.bindings]]
-chars = ""
-key = "T"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "N"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = ""
-key = "N"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "R"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "B"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "M"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "O"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "F"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "W"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Q"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "ﰯ"
-key = "Left"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "ﰲ"
-key = "Right"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "ﰵ"
-key = "Up"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "ﰬ"
-key = "Down"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Left"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Right"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Down"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Left"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Right"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Down"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = ""
-key = "R"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = ""
-key = "W"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Left"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Right"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Left"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Right"
-mods = "Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Down"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Down"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Up"
-mods = "Command|Option|Shift"
-
-[[keyboard.bindings]]
-chars = ""
-key = "Down"
-mods = "Command|Option|Shift"
-
 [selection]
 save_to_clipboard = true
 
 [window]
 decorations = "Buttonless"
 opacity = 1.0
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 
 [window.padding]
 x = 10
