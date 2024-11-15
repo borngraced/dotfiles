@@ -268,6 +268,19 @@ auto_layout true
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 
 themes {
+    dark {
+        fg 255 255 255
+        bg 0 0 0      
+        black 0 0 0    
+        red 128 128 128 
+        green 192 192 192
+        yellow 160 160 160
+        blue 192 192 192
+        magenta 128 128 128
+        cyan 160 160 160
+        white 255 255 255
+        orange 200 200 200
+    }
     gruvbox-light {
         fg 124 111 100
         bg 251 82 75
@@ -325,7 +338,7 @@ theme "melange"
 // The name of the default layout to load on startup
 // Default: "default"
 //
- default_layout "alt"
+ default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

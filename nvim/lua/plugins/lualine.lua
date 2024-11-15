@@ -28,7 +28,7 @@ local function update_rust_target()
         end
       end
     end
-    M.rust_target = "unknown"
+    M.rust_target = "OS Default"
     vim.schedule(function()
       vim.cmd("redrawstatus")
     end)
@@ -80,7 +80,7 @@ return {
 
     local opts = {
       options = {
-        theme = "auto",
+        theme = "gruvbox_dark",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
       },

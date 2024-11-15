@@ -7,3 +7,4 @@ vim.o.wrap = true
 local opt = vim.opt
 opt.relativenumber = true
 vim.g.gitblame_date_format = "%r"
+vim.g.colors_off_a_little = 1
