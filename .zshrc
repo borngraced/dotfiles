@@ -1,7 +1,6 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$HOME/flutter/bin"
-export EDITOR="nvim"
 export CC=/opt/homebrew/opt/llvm/bin/clang
 export AR=/opt/homebrew/opt/llvm/bin/llvm-ar
 export GECKODRIVER="/$HOME/work/geckodriver"
