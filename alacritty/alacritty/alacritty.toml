@@ -1,0 +1,76 @@
+[colors.primary]
+foreground = "#ECE1D7"
+background = "#292522"
+[colors.normal]
+black      = "#34302C"
+red        = "#BD8183"
+green      = "#78997A"
+yellow     = "#E49B5D"
+blue       = "#7F91B2"
+magenta    = "#B380B0"
+cyan       = "#7B9695"
+white      = "#C1A78E"
+[colors.bright]
+black      = "#867462"
+red        = "#D47766"
+green      = "#85B695"
+yellow     = "#EBC06D"
+blue       = "#A3A9CE"
+magenta    = "#CF9BC2"
+cyan       = "#89B3B6"
+white      = "#ECE1D7"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 15.5
+
+[cursor]
+style = "Underline"
+vi_mode_style = "Block"
+
+[font.normal]
+family = "ZedMono Nerd Font"
+style = "Extended"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "Buttonless"
+opacity = 1.0
+startup_mode = "Fullscreen"
+
+[window.padding]
+x =2 
+y =2 
+
+[hints]
+alphabet = "hutenosadigpc.r,l'"
+
+[[hints.enabled]]
+regex = """(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+    [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"""
+hyperlinks = true
+command = "firefox"
+post_processing = true
+mouse = { enabled = true }
+binding = { key = "U", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = "[a-f0-9]{40}|[a-f0-9]{7,8}"
+action = "Copy"
+binding = { key = "H", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = """(/?[^/ \"']*[a-zA-Z0-9][^/ \"':]*/([^/ \"']+/?)*)\
+    |(/[^/ \"']*[a-zA-Z0-9][^/ \"']*)"""
+action = "Copy"
+binding = { key = "P", mods = "Control|Shift" }
+
+[keyboard]
+bindings = [
+  { key = "Escape", mods = "Control",                            action = "ToggleViMode"   },
+  { key = "I",                              mode = "Vi|~Search", action = "ToggleViMode"   },
+]
