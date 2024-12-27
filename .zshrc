@@ -1,6 +1,8 @@
 
-# Export paths and environment variables
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Export paths and environment variables
 export PATH="$HOME/flutter/bin:$HOME/.local/bin:/opt/homebrew/opt/llvm/bin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -29,9 +31,10 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias kdf="nvim ~/work/komodefi"
 
 # Theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="evan"
 
 # Plugins
 plugins=(git rust zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
@@ -47,5 +50,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
+# iTerm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # opam configuration
-[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null 
