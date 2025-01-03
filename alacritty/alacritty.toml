@@ -24,19 +24,11 @@ white      = "#ECE1D7"
 TERM = "alacritty"
 
 [font]
-size = 17.5
+size = 15.5
 
-[font.bold]
-family = "ZedMono Nerd Font"
-style = "Bold"
-
-[font.bold_italic]
-family = "ZedMono Nerd Font"
-style = "Bold Italic"
-
-[font.italic]
-family = "ZedMono Nerd Font"
-style = "Italic"
+[cursor]
+style = "Underline"
+vi_mode_style = "Block"
 
 [font.normal]
 family = "ZedMono Nerd Font"
@@ -51,5 +43,34 @@ opacity = 1.0
 startup_mode = "Fullscreen"
 
 [window.padding]
-x = 10
-y = 10
+x =2 
+y =2 
+
+[hints]
+alphabet = "hutenosadigpc.r,l'"
+
+[[hints.enabled]]
+regex = """(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+    [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"""
+hyperlinks = true
+command = "firefox"
+post_processing = true
+mouse = { enabled = true }
+binding = { key = "U", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = "[a-f0-9]{40}|[a-f0-9]{7,8}"
+action = "Copy"
+binding = { key = "H", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = """(/?[^/ \"']*[a-zA-Z0-9][^/ \"':]*/([^/ \"']+/?)*)\
+    |(/[^/ \"']*[a-zA-Z0-9][^/ \"']*)"""
+action = "Copy"
+binding = { key = "P", mods = "Control|Shift" }
+
+[keyboard]
+bindings = [
+  { key = "Escape", mods = "Control",                            action = "ToggleViMode"   },
+  { key = "I",                              mode = "Vi|~Search", action = "ToggleViMode"   },
+]
