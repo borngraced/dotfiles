@@ -27,11 +27,15 @@ TERM = "alacritty"
 size = 15.5
 
 [cursor]
-style = "Underline"
-vi_mode_style = "Block"
+style = "Beam"
+vi_mode_style = "Beam"
 
 [font.normal]
-family = "ZedMono Nerd Font"
+family = "ZedMono Nerd Font Mono"
+style = "Extended"
+
+[font.italic]
+family = "ZedMono Nerd Font Mono"
 style = "Extended"
 
 [selection]
@@ -40,11 +44,12 @@ save_to_clipboard = true
 [window]
 decorations = "Buttonless"
 opacity = 1.0
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
+dynamic_padding = true 
 
 [window.padding]
-x =2 
-y =2 
+x = 0 
+y = 0 
 
 [hints]
 alphabet = "hutenosadigpc.r,l'"
@@ -53,7 +58,7 @@ alphabet = "hutenosadigpc.r,l'"
 regex = """(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
     [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"""
 hyperlinks = true
-command = "firefox"
+command = ""
 post_processing = true
 mouse = { enabled = true }
 binding = { key = "U", mods = "Control|Shift" }
@@ -71,6 +76,9 @@ binding = { key = "P", mods = "Control|Shift" }
 
 [keyboard]
 bindings = [
-  { key = "Escape", mods = "Control",                            action = "ToggleViMode"   },
-  { key = "I",                              mode = "Vi|~Search", action = "ToggleViMode"   },
+  { key = "Escape", mods = "Command",                            action = "ToggleViMode"   },
+  { key = "Escape",                              mode = "Vi|~Search", action = "ToggleViMode"   },
 ]
+
+[mouse]
+hide_when_typing = true

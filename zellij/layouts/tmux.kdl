@@ -1,0 +1,44 @@
+layout {
+  default_tab_template {
+    children
+      pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+          format_left  "#[bg=green,fg=black] {command_host_os_icon} {session} {mode}"
+          format_center "{tabs}"
+          format_right "#[bg=green,fg=black] {swap_layout} │ {datetime} "
+          format_space  "#[bg=green]"
+
+          mode_normal        "#[bg=green,fg=black]│#[bg=green,fg=black] NORMAL "
+          mode_locked        "#[bg=green,fg=green]│#[bg=red,fg=black]  LOCKED "
+          mode_resize        "#[bg=green,fg=green]│#[bg=magenta,fg=black] RESIZE "
+          mode_pane          "#[bg=green,fg=green]│#[bg=magenta,fg=black] PANE "
+          mode_tab           "#[bg=green,fg=green]│#[bg=magenta,fg=black] TAB "
+          mode_scroll        "#[bg=green,fg=green]│#[bg=magenta,fg=black] SCROLL "
+          mode_enter_search  "#[bg=green,fg=green]│#[bg=magenta,fg=black] ENTER_SEARCH "
+          mode_search        "#[bg=green,fg=green]│#[bg=magenta,fg=black] SEARCH "
+          mode_rename_tab    "#[bg=green,fg=green]│#[bg=magenta,fg=black] RENAME_TAB "
+          mode_rename_pane   "#[bg=green,fg=green]│#[bg=magenta,fg=black] RENAME_PANE "
+          mode_session       "#[bg=green,fg=green]│#[bg=magenta,fg=black] SESSION "
+          mode_move          "#[bg=green,fg=green]│#[bg=magenta,fg=black] MOVE "
+          mode_prompt        "#[bg=green,fg=green]│#[bg=magenta,fg=black] PROMPT "
+          mode_tmux          "#[bg=green,fg=green]│#[bg=magenta,fg=black] TMUX "
+
+          tab_normal "#[bg=green,fg=black] #[bg=green,fg=black]{name} {sync_indicator}{fullscreen_indicator}{floating_indicator}#[bg=green,fg=black]"
+          tab_active "#[bg=black,fg=green] #[bg=black,fg=green]{name} {sync_indicator}{fullscreen_indicator}{floating_indicator}#[bg=black,fg=green]"
+
+          tab_sync_indicator       "󰓦 "
+          tab_fullscreen_indicator "󱟱  "
+          tab_floating_indicator   "󰉈 "
+
+          command_host_os_icon_command "sh -c \"echo $(uname -s | grep -qi 'darwin' && echo '󰀵')$(uname -s | grep -qi 'linux' && echo '')$(uname -s | grep -qi 'nt' && echo '󰖳')\""
+          command_host_os_icon_format "{stdout}"
+          command_host_os_icon_interval "0"
+          command_host_os_icon_rendermode "static"
+
+          datetime          "{format}"
+          datetime_format   "%d-%m-%Y %H:%M"
+          datetime_timezone "Europe/Berlin"
+        }
+      }
+  }
+}

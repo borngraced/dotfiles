@@ -1,44 +1,71 @@
 layout {
+  tab {
+    pane
+  }
+
+  swap_tiled_layout name="vertical" {
+        tab max_panes=5 {
+        pane split_direction="vertical" {
+            pane
+            pane { children; }
+        }
+    }
+    tab max_panes=8 {
+        pane split_direction="vertical" {
+            pane { children; }
+            pane { pane; pane; pane; pane; }
+        }
+    }
+    tab max_panes=12 {
+        pane split_direction="vertical" {
+            pane { children; }
+            pane { pane; pane; pane; pane; }
+            pane { pane; pane; pane; pane; }
+        }
+    }
+  }
+
+  swap_tiled_layout name="horizontal" {
+        tab max_panes=5 {
+        pane
+        pane
+    }
+    tab max_panes=8 {
+        pane {
+            pane split_direction="vertical" { children; }
+            pane split_direction="vertical" { pane; pane; pane; pane; }
+        }
+    }
+    tab max_panes=12 {
+        pane {
+            pane split_direction="vertical" { children; }
+            pane split_direction="vertical" { pane; pane; pane; pane; }
+            pane split_direction="vertical" { pane; pane; pane; pane; }
+        }
+    }
+  }
+
   default_tab_template {
     children
-      pane size=1 borderless=true {
-        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
-          format_left  "#[bg=green,fg=black] {command_host_os_icon} {session} {mode}"
-          format_center "{tabs}"
-          format_right "#[bg=green,fg=black] {swap_layout} │ {datetime} "
-          format_space  "#[bg=green]"
+    pane size=1 borderless=true {
+      plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+        format_left "{mode}{tabs}"
+        format_right "#[fg=#83a598,bold]{session} #[fg=#b8bb26,bold]{swap_layout}"
 
-          mode_normal        "#[bg=green,fg=black]│#[bg=green,fg=black] NORMAL "
-          mode_locked        "#[bg=green,fg=green]│#[bg=red,fg=black]  LOCKED "
-          mode_resize        "#[bg=green,fg=green]│#[bg=magenta,fg=black] RESIZE "
-          mode_pane          "#[bg=green,fg=green]│#[bg=magenta,fg=black] PANE "
-          mode_tab           "#[bg=green,fg=green]│#[bg=magenta,fg=black] TAB "
-          mode_scroll        "#[bg=green,fg=green]│#[bg=magenta,fg=black] SCROLL "
-          mode_enter_search  "#[bg=green,fg=green]│#[bg=magenta,fg=black] ENTER_SEARCH "
-          mode_search        "#[bg=green,fg=green]│#[bg=magenta,fg=black] SEARCH "
-          mode_rename_tab    "#[bg=green,fg=green]│#[bg=magenta,fg=black] RENAME_TAB "
-          mode_rename_pane   "#[bg=green,fg=green]│#[bg=magenta,fg=black] RENAME_PANE "
-          mode_session       "#[bg=green,fg=green]│#[bg=magenta,fg=black] SESSION "
-          mode_move          "#[bg=green,fg=green]│#[bg=magenta,fg=black] MOVE "
-          mode_prompt        "#[bg=green,fg=green]│#[bg=magenta,fg=black] PROMPT "
-          mode_tmux          "#[bg=green,fg=green]│#[bg=magenta,fg=black] TMUX "
+        mode_normal        "#[fg=#b8bb26,bold]{name}"
+        mode_locked        "#[fg=#fb4934,bold]{name}"
+        mode_resize        "#[fg=#fabd2f,bold]{name}"
+        mode_pane          "#[fg=#d3869b,bold]{name}"
+        mode_tab           "#[fg=#83a598,bold]{name}"
+        mode_scroll        "#[fg=#8ec07c,bold]{name}"
+        mode_session       "#[fg=#fe8019,bold]{name}"
+        mode_move          "#[fg=#a89984,bold]{name}"
 
-          tab_normal "#[bg=green,fg=black] #[bg=green,fg=black]{name} {sync_indicator}{fullscreen_indicator}{floating_indicator}#[bg=green,fg=black]"
-          tab_active "#[bg=black,fg=green] #[bg=black,fg=green]{name} {sync_indicator}{fullscreen_indicator}{floating_indicator}#[bg=black,fg=green]"
-
-          tab_sync_indicator       "󰓦 "
-          tab_fullscreen_indicator "󱟱  "
-          tab_floating_indicator   "󰉈 "
-
-          command_host_os_icon_command "sh -c \"echo $(uname -s | grep -qi 'darwin' && echo '󰀵')$(uname -s | grep -qi 'linux' && echo '')$(uname -s | grep -qi 'nt' && echo '󰖳')\""
-          command_host_os_icon_format "{stdout}"
-          command_host_os_icon_interval "0"
-          command_host_os_icon_rendermode "static"
-
-          datetime          "{format}"
-          datetime_format   "%d-%m-%Y %H:%M"
-          datetime_timezone "Lagos/Africa"
-        }
+        tab_normal   "#[fg=#a89984,bold] {name}"
+        tab_active   "#[fg=#83a598,bold] {name}"
       }
+    }
   }
 }
+
+

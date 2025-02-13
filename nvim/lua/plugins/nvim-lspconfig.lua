@@ -42,7 +42,7 @@ return {
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the code lenses.
       codelens = {
-        enabled = true,
+        enabled = false,
       },
       -- add any global capabilities here
       capabilities = {
@@ -94,44 +94,6 @@ return {
             },
           },
         },
-        gopls = {
-          settings = {
-            gopls = {
-              gofumpt = true,
-              codelenses = {
-                gc_details = false,
-                generate = true,
-                regenerate_cgo = true,
-                run_govulncheck = true,
-                test = true,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-              },
-              hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
-              analyses = {
-                fieldalignment = true,
-                nilness = true,
-                unusedparams = true,
-                unusedwrite = true,
-                useany = true,
-              },
-              usePlaceholders = true,
-              completeUnimported = true,
-              staticcheck = true,
-              directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-              semanticTokens = true,
-            },
-          },
-        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -175,7 +137,7 @@ return {
     if vim.fn.has("nvim-0.10") == 1 then
       -- inlay hints
       if opts.inlay_hints.enabled then
-        LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(_, buffer)
+        LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
           if
             vim.api.nvim_buf_is_valid(buffer)
             and vim.bo[buffer].buftype == ""
@@ -188,7 +150,7 @@ return {
 
       -- code lens
       if opts.codelens.enabled and vim.lsp.codelens then
-        LazyVim.lsp.on_supports_method("textDocument/codeLens", function(_, buffer)
+        LazyVim.lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
           vim.lsp.codelens.refresh()
           vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
             buffer = buffer,

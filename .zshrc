@@ -47,7 +47,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#66666,bg=#1c1c1c,bold,underline"
 
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 # iTerm2 shell integration

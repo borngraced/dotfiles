@@ -15,13 +15,13 @@ vim.g.autoformat = true
 vim.g.snacks_animate = true
 
 -- LazyVim picker to use.
-vim.g.lazyvim_picker = "auto"
+vim.g.lazyvim_picker = "fzf"
 
 -- LazyVim completion engine to use.
 vim.g.lazyvim_cmp = "auto"
 
 -- AI completion engine preference
-vim.g.ai_cmp = true
+vim.g.ai_cmp = false
 
 -- LazyVim root dir detection
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
@@ -30,17 +30,15 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.root_lsp_ignore = { "copilot" }
 
 -- Hide deprecation warnings
-vim.g.deprecation_warnings = true
+vim.g.deprecation_warnings = false
 
 -- Show the current document symbols location in lualine
 vim.g.trouble_lualine = true
 
 -- General Options
 local opt = vim.opt
-
 opt.relativenumber = true
 opt.autowrite = true
-opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
 opt.confirm = true
@@ -57,14 +55,14 @@ opt.laststatus = 3
 opt.linebreak = true
 opt.list = true
 opt.mouse = "a"
-opt.pumblend = 7
+opt.pumblend = 5
 opt.pumheight = 7
 opt.number = false
-opt.relativenumber = false
+opt.relativenumber = true
 opt.scrolloff = 4
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.shiftround = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.showmode = false
 opt.sidescrolloff = 8
@@ -74,7 +72,7 @@ opt.smartindent = true
 opt.spelllang = { "en" }
 opt.splitbelow = true
 opt.splitright = true
-opt.tabstop = 2
+opt.tabstop = 4
 opt.termguicolors = true
 opt.timeoutlen = 300
 opt.undofile = true
@@ -83,5 +81,3 @@ opt.updatetime = 200
 opt.virtualedit = "block"
 opt.wildmode = "longest:full,full"
 opt.winminwidth = 5
--- Markdown-specific settings
-vim.g.markdown_recommended_style = 0
