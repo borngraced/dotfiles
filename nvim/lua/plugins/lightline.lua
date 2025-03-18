@@ -22,7 +22,7 @@ return {
 
         local opts = {
             options = {
-                theme = "iceberg_dark",
+                theme = "auto",
                 globalstatus = vim.o.laststatus == 3,
                 disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
             },
@@ -51,7 +51,6 @@ return {
                         cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
                         color = function() return { fg = Snacks.util.color("Debug") } end,
                     },
-                    -- stylua: ignore
                     {
                         require("lazy.status").updates,
                         cond = require("lazy.status").has_updates,

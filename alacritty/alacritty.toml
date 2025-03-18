@@ -1,42 +1,55 @@
 [colors.primary]
-foreground = "#ECE1D7"
-background = "#292522"
+background = "#282828"
+foreground = "#eeeeee"
+
 [colors.normal]
-black      = "#34302C"
-red        = "#BD8183"
-green      = "#78997A"
-yellow     = "#E49B5D"
-blue       = "#7F91B2"
-magenta    = "#B380B0"
-cyan       = "#7B9695"
-white      = "#C1A78E"
+black   = "#282828"
+red     = "#f43753"
+green   = "#c9d05c"
+yellow  = "#ffc24b"
+blue    = "#b3deef"
+magenta = "#d3b987"
+cyan    = "#73cef4"
+white   = "#eeeeee"
+
 [colors.bright]
-black      = "#867462"
-red        = "#D47766"
-green      = "#85B695"
-yellow     = "#EBC06D"
-blue       = "#A3A9CE"
-magenta    = "#CF9BC2"
-cyan       = "#89B3B6"
-white      = "#ECE1D7"
+black   = "#4c4c4c"
+red     = "#f43753"
+green   = "#c9d05c"
+yellow  = "#ffc24b"
+blue    = "#b3deef"
+magenta = "#d3b987"
+cyan    = "#73cef4"
+white   = "#feffff"
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
+SHELL = "fish"
 
 [font]
-size = 15.5
+size = 16.5 
+builtin_box_drawing = false
 
 [cursor]
-style = "Beam"
-vi_mode_style = "Beam"
+blink_interval = 550
+unfocused_hollow = false
+thickness = 0.15
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
 
 [font.normal]
-family = "ZedMono Nerd Font Mono"
-style = "Extended"
+family = "Iosevka Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Iosevka Nerd Font"
+style = "Regular"
 
 [font.italic]
-family = "ZedMono Nerd Font Mono"
-style = "Extended"
+family = "Iosevka Nerd Font"
+style = "Regular"
 
 [selection]
 save_to_clipboard = true
@@ -44,11 +57,13 @@ save_to_clipboard = true
 [window]
 decorations = "Buttonless"
 opacity = 1.0
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 dynamic_padding = true 
+option_as_alt = "Both"
+decorations_theme_variant = "Dark"
 
 [window.padding]
-x = 0 
+x = 2
 y = 0 
 
 [hints]
@@ -80,5 +95,3 @@ bindings = [
   { key = "Escape",                              mode = "Vi|~Search", action = "ToggleViMode"   },
 ]
 
-[mouse]
-hide_when_typing = true

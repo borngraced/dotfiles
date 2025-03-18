@@ -12,5 +12,6 @@ return {
     { "trouble.nvim",                        enabled = false },
     { "nvim-ts-autotag",                     enabled = false },
     { "bufferline.nvim",                     enabled = false },
-    { "min-identscope",                      enabled = false },
+    { "mini-identscope",                     enabled = false },
+    { "nvim-lint.nvim",                      enabled = false },
 }
