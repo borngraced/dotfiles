@@ -1,11 +1,9 @@
 return {
     {
         "savq/melange-nvim",
-        lazy = false,
-        priority = 1000,
+        as = "biscuit",
         config = function()
-            vim.o.background = "dark"
-            vim.cmd.colorscheme("melange")
-        end,
-    },
-}
+            vim.opt.termguicolors = true
+            vim.cmd('colorscheme melange')
+        end
+    } }

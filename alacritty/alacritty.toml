@@ -1,33 +1,34 @@
 [colors.primary]
-background = "#282828"
-foreground = "#eeeeee"
-
+foreground = "#ECE1D7"
+background = "#292522"
 [colors.normal]
-black   = "#282828"
-red     = "#f43753"
-green   = "#c9d05c"
-yellow  = "#ffc24b"
-blue    = "#b3deef"
-magenta = "#d3b987"
-cyan    = "#73cef4"
-white   = "#eeeeee"
-
+black      = "#34302C"
+red        = "#BD8183"
+green      = "#78997A"
+yellow     = "#E49B5D"
+blue       = "#7F91B2"
+magenta    = "#B380B0"
+cyan       = "#7B9695"
+white      = "#C1A78E"
 [colors.bright]
-black   = "#4c4c4c"
-red     = "#f43753"
-green   = "#c9d05c"
-yellow  = "#ffc24b"
-blue    = "#b3deef"
-magenta = "#d3b987"
-cyan    = "#73cef4"
-white   = "#feffff"
+black      = "#867462"
+red        = "#D47766"
+green      = "#85B695"
+yellow     = "#EBC06D"
+blue       = "#A3A9CE"
+magenta    = "#CF9BC2"
+cyan       = "#89B3B6"
+white      = "#ECE1D7"
+
+[colors]
+draw_bold_text_with_bright_colors = true
 
 [env]
-TERM = "xterm-256color"
-SHELL = "fish"
+TERM = "alacritty"
+SHELL = "/opt/homebrew/bin/fish"
 
 [font]
-size = 16.5 
+size = 13.1
 builtin_box_drawing = false
 
 [cursor]
@@ -40,23 +41,14 @@ blinking = "On"
 shape = "Block"
 
 [font.normal]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
-[font.bold]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
-[font.italic]
-family = "Iosevka Nerd Font"
-style = "Regular"
+family = "MonoLisa Nerd Font Mono"
 
 [selection]
 save_to_clipboard = true
 
 [window]
 decorations = "Buttonless"
-opacity = 1.0
+opacity = 1.0 
 startup_mode = "Fullscreen"
 dynamic_padding = true 
 option_as_alt = "Both"

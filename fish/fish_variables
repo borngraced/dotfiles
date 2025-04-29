@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR ALICE_PASSPHRASE:spice\x20describe\x20gravity\x20federal\x20blast\x20come\x20thank\x20unfair\x20canal\x20monkey\x20style\x20afraid
+SETUVAR BOB_PASSPHRASE:also\x20shoot\x20benefit\x20prefer\x20juice\x20shell\x20elder\x20veteran\x20woman\x20mimic\x20image\x20kidney
 SETUVAR EDITOR:vim
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
@@ -30,3 +32,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/opt/local/bin\x1e/opt/local/sbin
