@@ -1,0 +1,79 @@
+theme = "kanagawa-dragon"
+
+[editor]
+line-number = "relative"
+mouse = true
+bufferline = "never"
+true-color = true
+color-modes = true
+auto-save = true
+gutters = ["spacer"]
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "file-name",
+  "file-modification-indicator",
+]
+right = [
+  "spinner",
+  "spacer",
+  "diagnostics",
+  "workspace-diagnostics",
+  "position-percentage",
+  "position",
+  "file-encoding",
+  "file-type",
+]
+
+[keys.normal]
+C-s = ":w"
+C-o = ":open ~/.config/helix/config.toml"
+"C-S-esc" = "extend_line"
+"ret" = ["open_below", "normal_mode"]
+"A-x" = "@x<A-d>"
+C-g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
+C-r = [
+    ":write-all",
+    ":insert-output scooter >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
+"1" = "goto_line_end"
+"0" = "goto_line_start"
+# y = "yank_to_clipboard"
+[keys.insert]
+"A-x" = "normal_mode"
+j = { k = "normal_mode" }
+
+[keys.normal.z]
+j = "scroll_up"
+k = "scroll_down"
+
+[keys.normal.g]
+B = ":sh git blame %{buffer_name} %{cursor_line}"
+U = ":sh git blame --url-only %{cursor_line} %{buffer_name} | xargs -I{} xdg-open {}"
+
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 0
+wrap-indicator = ""
+
+# [editor.gutters.line-numbers]
+# min-width = 1
