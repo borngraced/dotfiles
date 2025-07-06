@@ -1,0 +1,124 @@
+{
+  "project_panel": {
+    "hide_gitignore": false
+  },
+  "features": {
+    "copilot": false,
+    "edit_prediction_provider": "none"
+  },
+  "vim_mode": true,
+  "theme": "Kanagawa Dragon",
+  "ui_font_size": 12.5,
+  "ui_font_family": "IosevkaTerm Nerd Font",
+  "buffer_font_size": 12.5,
+  "autosave": "on_focus_change",
+  "restore_on_startup": "last_session",
+  "vim": {
+    "cursor_blink": true,
+    "relative_line_numbers": true,
+    "scrollbar": { "show": "never" },
+    "scroll_beyond_last_line": "off",
+    "vertical_scroll_margin": 0,
+    "gutter": {
+      "line_numbers": false
+    },
+    "command_aliases": {
+      "W": "w",
+      "Wq": "wq",
+      "Q": "q"
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "procMacro": "false",
+        "checkOnSave": false,
+        "check": {
+          "command": "clippy"
+        },
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "useParameterNames": true,
+            "enable": "skip_trivial"
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        },
+        "completion": {
+          "snippets": {
+            "custom": {
+              "Arc::new": {
+                "postfix": "arc",
+                "body": ["Arc::new(${receiver})"],
+                "requires": "std::sync::Arc",
+                "scope": "expr"
+              },
+              "Some": {
+                "postfix": "some",
+                "body": ["Some(${receiver})"],
+                "scope": "expr"
+              },
+              "Ok": {
+                "postfix": "ok",
+                "body": ["Ok(${receiver})"],
+                "scope": "expr"
+              },
+              "Rc::new": {
+                "postfix": "rc",
+                "body": ["Rc::new(${receiver})"],
+                "requires": "std::rc::Rc",
+                "scope": "expr"
+              },
+              "Box::pin": {
+                "postfix": "boxpin",
+                "body": ["Box::pin(${receiver})"],
+                "requires": "std::boxed::Box",
+                "scope": "expr"
+              },
+              "vec!": {
+                "postfix": "vec",
+                "body": ["vec![${receiver}]"],
+                "description": "vec![]",
+                "scope": "expr"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "languages": {
+    "TypeScript": {
+      "language_servers": [
+        "biome",
+        "!typescript-language-server",
+        "!eslint",
+        "..."
+      ]
+    }
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "scrollbar": {
+    "show": "never",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_symbol": true,
+    "diagnostics": "all"
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "inlay_hints": {
+    "enabled": false
+  }
+}
