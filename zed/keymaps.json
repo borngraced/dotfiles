@@ -1,0 +1,147 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close"
+    }
+  },
+  {
+    "context": "vim_mode == normal || ProjectPanel || EmptyPane || SharedScreen",
+    "bindings": {
+      "space l": "pane::ActivateNextItem",
+      "space h": "pane::ActivatePreviousItem",
+      "space g r": "editor::FindAllReferences",
+      "space w l": "workspace::ActivatePaneRight",
+      "space w h": "workspace::ActivatePaneLeft",
+      "ctrl-\\": "workspace::ToggleRightDock",
+      "ctrl-t": "editor::ToggleTabBar",
+      "cmd-k": "workspace::ToggleRightDock",
+      "space a e": "assistant::InlineAssist",
+      "cmd-l": "assistant::InlineAssist",
+      "space a t": "workspace::ToggleRightDock",
+      "space g g": [
+        "task::Spawn",
+        {
+          "label": "lazygit",
+          "command": "lazygit",
+          //"args": [],
+          // Env overrides for the command, will be appended to the terminal's environment from the settings.
+          "env": {},
+          // Current working directory to spawn the command into, defaults to current project root.
+          //"cwd": "/path/to/working/directory",
+          // Whether to use a new terminal tab or reuse the existing one to spawn the process, defaults to `false`.
+          "use_new_terminal": false,
+          // Whether to allow multiple instances of the same task to be run, or rather wait for the existing ones to finish, defaults to `false`.
+          "allow_concurrent_runs": false,
+          // What to do with the terminal pane and tab, after the command was started:
+          // * `always` — always show the task's pane, and focus the corresponding tab in it (default)
+          // * `no_focus` — always show the task's pane, add the task's tab in it, but don't focus it
+          // * `never` — do not alter focus, but still add/reuse the task's tab in its pane
+          "reveal": "always",
+          // Where to place the task's terminal item after starting the task:
+          // * `dock` — in the terminal dock, "regular" terminal items' place (default)
+          // * `center` — in the central pane group, "main" editor area
+          "reveal_target": "center",
+          // What to do with the terminal pane and tab, after the command had finished:
+          // * `never` — Do nothing when the command finishes (default)
+          // * `always` — always hide the terminal tab, hide the pane also if it was the last tab in it
+          // * `on_success` — hide the terminal tab on task success only, otherwise behaves similar to `always`
+          "hide": "always",
+          // Which shell to use when running a task inside the terminal.
+          // May take 3 values:
+          // 1. (default) Use the system's defaultter minal configuration in /etc/passwd
+          //      "shell": "system"
+          // 2. A program:
+          //      "shell": {
+          //        "program": "sh"
+          //      }
+          // 3. A program with arguments:
+          //     "shell": {
+          //         "with_arguments": {
+          //           "program": "/bin/bash",
+          //           "args": ["--login"]
+          //         }
+          //     }
+          "shell": "system",
+          // Represents the tags for inline runnable indicators, or spawning multiple tasks at once.
+          "tags": []
+        }
+      ],
+      "space g h d": "editor::ExpandAllDiffHunks",
+      "space g h D": "git::Diff",
+      "space g h r": "git::Restore",
+      "space g h R": "git::RestoreFile",
+      "space u i": "editor::ToggleInlayHints",
+      "space u w": "editor::ToggleSoftWrap",
+      "space m p": "markdown::OpenPreview",
+      "space m P": "markdown::OpenPreviewToTheSide",
+      "space f p": "projects::OpenRecent",
+      "space s w": "buffer_search::Deploy",
+      "space s W": "pane::DeploySearch",
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space 9": ["pane::ActivateItem", 8],
+      "space 0": "pane::ActivateLastItem",
+      "] b": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "space ,": "tab_switcher::Toggle",
+      "space b b": "pane::AlternateFile",
+      "space b d": "pane::CloseActiveItem",
+      "space b q": "pane::CloseInactiveItems",
+      "space b n": "workspace::NewFile",
+      "space s b": "vim::Search",
+      "space s g": "workspace::NewSearch",
+      "space f n": "workspace::NewFile",
+      "space /": "workspace::NewSearch",
+      "space g b": "git::Blame",
+      "space c a": "editor::ToggleCodeActions",
+      "space s d": "diagnostics::Deploy",
+      "space s s": "outline::Toggle",
+      "space c f": "editor::Format",
+      "space e": "workspace::ToggleLeftDock",
+      "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      "space q q": "zed::Quit",
+      "space t": "workspace::ToggleBottomDock",
+      "space w s": "pane::SplitDown",
+      "space w v": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space |": "pane::SplitRight",
+      "space w c": "pane::CloseAllItems",
+      "space w d": "pane::CloseAllItems",
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+      "] q": "editor::MoveToStartOfNextExcerpt",
+      "[ q": "editor::MoveToStartOfExcerpt"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "n": ["workspace::SendKeystrokes", "n z z z v"],
+      "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
+      "shift-g": ["workspace::SendKeystrokes", "shift-g z z"],
+      "g r": "editor::FindAllReferences"
+    }
+  }
+]
